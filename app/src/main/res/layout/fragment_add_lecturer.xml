@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageViewLecturer"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:padding="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/form"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_user_default" />
+
+    <LinearLayout
+        android:id="@+id/form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editTextLecturerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Lecturer Name"/>
+
+        <Button
+            android:id="@+id/buttonAddLecturer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add" />
+
+    </LinearLayout>
+
+</RelativeLayout>

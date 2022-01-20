@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:padding="10dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/rateLecturer"
+        android:layout_alignParentTop="true"
+        android:padding="10dp"
+        android:text="Rate Lecturer"
+        android:textColor="@color/text_color"
+        android:textSize="17sp" />
+
+    <RatingBar
+        android:id="@+id/rateLecturer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true"
+        android:numStars="5"
+        android:rating="0" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rateLecturer"
+        android:layout_alignParentEnd="true"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/buttonCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:text="Cancel"
+            android:textColor="@color/btu_color"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/buttonRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rate"
+            android:textColor="@color/btu_color"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

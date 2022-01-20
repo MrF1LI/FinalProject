@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layoutDrawer"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/classroomContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/classroomHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/item_color"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp">
+
+            <ImageView
+                android:id="@+id/buttonBurger"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                app:srcCompat="@drawable/ic_burger_button"
+                app:tint="@color/opposite_color" />
+
+            <TextView
+                android:id="@+id/headerTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Students"
+                android:textColor="@color/btu_color"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageUserAvatar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_user_default"
+                app:civ_border_color="#C6000000" />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/bottomHeader"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#A6928B8B"
+            android:layout_alignBottom="@+id/classroomHeader" />
+
+        <fragment
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bottomHeader"
+            android:layout_alignParentBottom="true"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph_home" />
+
+    </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/sidebarNavigation"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        android:background="@color/bg_sidebar"
+        app:itemIconTint="@color/white"
+        app:headerLayout="@layout/header_sidebar_navigation"
+        app:menu="@menu/menu_sidebar"
+        app:itemTextColor="@color/white" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

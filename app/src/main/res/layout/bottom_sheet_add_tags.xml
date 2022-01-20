@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="დაამატეთ ტეგები"
+        android:textColor="@color/opposite_color"
+        android:textSize="16sp" />
+
+    <View
+        android:id="@+id/bottomHeader"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#A6928B8B"
+        android:layout_below="@+id/title" />
+
+    <LinearLayout
+        android:id="@+id/courses"
+        android:layout_below="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="კურსები"
+            android:textSize="16sp" />
+
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/courses2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:checkable="true"
+                app:checkedIcon="@drawable/ic_done"
+                android:text="I კურსი"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip1"
+                android:layout_width="wrap_content"
+                android:checkable="true"
+                app:checkedIcon="@drawable/ic_done"
+                android:layout_height="wrap_content"
+                android:text="II კურსი"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip2"
+                android:layout_width="wrap_content"
+                app:checkedIcon="@drawable/ic_done"
+                android:checkable="true"
+                android:layout_height="wrap_content"
+                android:text="III კურსი"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:checkedIcon="@drawable/ic_done"
+                android:checkable="true"
+                android:text="IV კურსი"/>
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/courses1"
+        android:layout_below="@+id/courses"
+        android:layout_width="match_parent"
+        app:checkedIcon="@drawable/ic_done"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="საგნები"
+            android:textSize="16sp" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip4"
+                android:checkable="true"
+                android:layout_width="wrap_content"
+                app:checkedIcon="@drawable/ic_done"
+                android:layout_height="wrap_content"
+                android:text="მენეჯმენტი"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                app:checkedIcon="@drawable/ic_done"
+                android:text="ფინანსები"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip6"
+                android:checkable="true"
+                app:checkedIcon="@drawable/ic_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="IT"/>
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/thematic"
+        android:layout_below="@+id/courses1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="თემატიკა"
+            android:textSize="16sp" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip7"
+                android:checkable="true"
+                app:checkedIcon="@drawable/ic_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="გამოცდა"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip8"
+                android:checkable="true"
+                android:layout_width="wrap_content"
+                app:checkedIcon="@drawable/ic_done"
+                android:layout_height="wrap_content"
+                android:text="offtop"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip9"
+                android:checkable="true"
+                app:checkedIcon="@drawable/ic_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="გართობა"/>
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <Button
+            android:id="@+id/buttonSaveTags"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/btu_color"
+            android:text="Save" />
+
+    </LinearLayout>
+
+</RelativeLayout>

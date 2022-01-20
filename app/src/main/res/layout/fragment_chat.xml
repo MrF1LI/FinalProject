@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bg_color">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="5dp"
+        android:paddingHorizontal="10dp"
+        android:background="@color/item_color"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/iconBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:padding="5dp"
+            app:srcCompat="@drawable/ic_back_arrow"
+            app:tint="@color/btu_color" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/userAvatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:layout_toEndOf="@+id/iconBack"
+            android:src="@drawable/ic_user_default"
+            app:civ_border_color="#C6000000" />
+
+        <TextView
+            android:id="@+id/friendName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/userAvatar"
+            android:text="გიორგი ფილიშვილი"
+            android:textColor="@color/opposite_color"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iconInfo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:padding="5dp"
+            app:srcCompat="@drawable/ic_info"
+            app:tint="@color/btu_color" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewMessages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/sendMessage"
+        android:layout_below="@+id/header" />
+
+    <RelativeLayout
+        android:id="@+id/sendMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp"
+        android:background="@color/item_color"
+        android:layout_alignParentBottom="true">
+
+        <EditText
+            android:id="@+id/editTextMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Send Message"
+            android:background="@drawable/bg_edittext"
+            android:paddingVertical="7dp"
+            android:textSize="16sp"
+            android:paddingHorizontal="15dp"
+            android:maxLines="5"
+            android:inputType="text|textMultiLine"
+            android:layout_margin="5dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_toStartOf="@+id/iconSendMessage"/>
+
+        <ImageView
+            android:id="@+id/iconSendMessage"
+            android:layout_width="40dp"
+            android:layout_centerInParent="true"
+            android:layout_height="40dp"
+            android:padding="5dp"
+            app:tint="@color/btu_color"
+            android:layout_alignParentEnd="true"
+            app:srcCompat="@drawable/ic_send" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

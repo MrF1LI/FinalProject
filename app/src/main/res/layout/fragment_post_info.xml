@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/item_color">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/addComment">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="20dp">
+
+            <RelativeLayout
+                android:id="@+id/postHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/userAvatar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_user_default"
+                    app:civ_border_color="#C6000000" />
+
+                <TextView
+                    android:id="@+id/postOwner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/userAvatar"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:paddingHorizontal="10dp"
+                    android:text="გიორგი ფილიშვილი"
+                    android:textColor="@color/opposite_color"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageViewMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    app:srcCompat="@drawable/ic_more_hor" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/postContentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/postHeader"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/postContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color"
+                    android:paddingVertical="8dp"
+                    android:text="ერთი ორი სამი ოთხი ხუთი ექვსი შვისი რვა ცხრა ათი თერთმეტი თორმეტი ცამეტი თოთხმეტი"
+                    android:textSize="16sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewTags"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_tag" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/reactAndComment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:paddingVertical="8dp"
+                android:layout_below="@+id/postContentContainer"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iconReact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:tint="@color/text_color"
+                        app:srcCompat="@drawable/ic_react" />
+
+                    <TextView
+                        android:id="@+id/reactCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="0 Like"
+                        android:textColor="@color/text_color"
+                        android:paddingHorizontal="10dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/commentCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/text_color"
+                        android:text="0 Comment"
+                        android:gravity="center"
+                        android:paddingHorizontal="10dp" />
+
+                    <ImageView
+                        android:id="@+id/iconComment"
+                        android:layout_width="wrap_content"
+                        app:tint="@color/text_color"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_comment" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/bottom"
+                android:layout_width="match_parent"
+                android:layout_height="0.6dp"
+                android:background="#C6928B8B"
+                android:layout_below="@+id/reactAndComment" />
+
+            <TextView
+                android:id="@+id/noComments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Comments Available."
+                android:layout_below="@id/bottom"
+                android:visibility="invisible"
+                android:paddingVertical="10dp"
+                android:textSize="16sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewComments"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/bottom"
+                tools:listitem="@layout/item_comment" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <View
+        android:id="@+id/commentLine"
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:background="#C6928B8B"
+        android:layout_above="@+id/addComment" />
+
+    <RelativeLayout
+        android:id="@+id/addComment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp"
+        android:background="@color/item_color"
+        android:layout_alignParentBottom="true">
+
+        <EditText
+            android:id="@+id/editTextNewComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Add Comment"
+            android:maxLines="5"
+            android:inputType="text|textMultiLine"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/buttonAddComment"/>
+
+        <Button
+            android:id="@+id/buttonAddComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/item_color"
+            android:textColor="@color/opposite_color"
+            android:layout_alignParentEnd="true"
+            android:text="Add" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

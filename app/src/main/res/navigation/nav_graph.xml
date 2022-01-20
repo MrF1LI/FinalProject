@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/addPostFragment"
+        android:name="com.example.afinal.fragments.AddPostFragment"
+        android:label="AddPostFragment"
+        tools:layout="@layout/fragment_add_post" />
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.afinal.fragments.ChatFragment"
+        android:label="ChatFragment"
+        tools:layout="@layout/fragment_chat" />
+
+    <fragment
+        android:id="@+id/postInfoFragment"
+        android:name="com.example.afinal.fragments.PostInfoFragment"
+        android:label="PostInfoFragment"
+        tools:layout="@layout/fragment_post_info">
+        <argument
+            android:name="position"
+            app:argType="string"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.afinal.fragments.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile"/>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.afinal.fragments.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home"/>
+
+    <fragment
+        android:id="@+id/lecturerReviewFragment"
+        android:name="com.example.afinal.fragments.LecturerReviewFragment"
+        android:label="LecturerReviewFragment"
+        tools:layout="@layout/fragment_lecturer_review">
+        <argument
+            android:name="position"
+            app:argType="string"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/addLecturerFragment"
+        android:name="com.example.afinal.fragments.AddLecturerFragment"
+        android:label="AddLecturerFragment"
+        tools:layout="@layout/fragment_add_lecturer"/>
+
+    <action
+        android:id="@+id/action_home"
+        app:destination="@id/homeFragment"
+        app:popUpTo="@id/homeFragment"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/action_add_post"
+        app:destination="@id/addPostFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:popUpTo="@id/addPostFragment"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/action_post_info"
+        app:destination="@id/postInfoFragment"
+        app:popUpTo="@id/postInfoFragment"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/action_chat"
+        app:destination="@id/chatFragment"
+        app:popUpTo="@id/chatFragment"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/action_lecturer_review"
+        app:destination="@id/lecturerReviewFragment"
+        app:popUpTo="@id/lecturerReviewFragment"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/action_add_lecturer"
+        app:destination="@id/addLecturerFragment"
+        app:popUpTo="@id/addLecturerFragment"
+        app:popUpToInclusive="true" />
+
+</navigation>

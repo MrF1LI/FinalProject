@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistrationActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="რეგისტრაცია"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/title_color"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/registrationForm"/>
+
+    <LinearLayout
+        android:id="@+id/registrationForm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingBottom="30dp"
+        android:paddingHorizontal="35dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageViewUserAvatar"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_user_default" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/editTextName"
+                    android:inputType="textPersonName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/opposite_color"
+                    android:textColorHint="@color/opposite_color"
+                    android:backgroundTint="@color/opposite_color"
+                    android:hint="სახელი" />
+
+                <EditText
+                    android:id="@+id/editTextSurname"
+                    android:inputType="textPersonName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:textColor="@color/opposite_color"
+                    android:textColorHint="@color/opposite_color"
+                    android:backgroundTint="@color/opposite_color"
+                    android:hint="გვარი" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/opposite_color"
+            android:textColorHint="@color/opposite_color"
+            android:backgroundTint="@color/opposite_color"
+            android:hint="ელ. ფოსტა" />
+
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:textColor="@color/opposite_color"
+            android:textColorHint="@color/opposite_color"
+            android:backgroundTint="@color/opposite_color"
+            android:hint="ახალი პაროლი" />
+
+        <EditText
+            android:id="@+id/editTextConfirmPassword"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/opposite_color"
+            android:textColorHint="@color/opposite_color"
+            android:backgroundTint="@color/opposite_color"
+            android:hint="გაიმეორეთ პაროლი" />
+
+        <Button
+            android:id="@+id/buttonRegistration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="რეგისტრაცია"
+            android:textColor="@color/item_color"
+            android:background="@drawable/bg_button"/>
+
+        <TextView
+            android:id="@+id/errorText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"
+            android:paddingHorizontal="35dp"
+            android:paddingVertical="10dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/buttonAuthorization"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:padding="15dp"
+        android:text="ავტორიზაცია"
+        android:textColor="@color/title_color" />
+
+</RelativeLayout>

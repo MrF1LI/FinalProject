@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
@@ -53,9 +54,9 @@ class HomeFragment: Fragment (R.layout.fragment_home) {
         }
 
         binding.imageUserAvatar.setOnClickListener {
-//            val controller = Navigation.findNavController(requireView())
-//            val action = HomeFragmentDirections.actionHomeFragmentToProfileFragment()
-//            controller.navigate(action)
+            val mainNavController =
+                Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
+            mainNavController.navigate(R.id.action_profile)
         }
 
     }

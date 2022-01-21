@@ -75,7 +75,11 @@ class ChatFragment: Fragment (R.layout.fragment_chat) {
                 val storageReference = FirebaseStorage.getInstance().getReferenceFromUrl("gs://students-61271.appspot.com/")
 
                 storageReference.child("ProfilePictures/${receiverUid}").downloadUrl.addOnSuccessListener { url ->
-                    Glide.with(this@ChatFragment).load(url).into(binding.userAvatar)
+                    try {
+                        Glide.with(this@ChatFragment).load(url).into(binding.userAvatar)
+                    } catch (e: Exception) {
+                        Log.d("SHOW", "Arvimchnevt")
+                    }
                 }.addOnFailureListener {
                     try {
                         throw it

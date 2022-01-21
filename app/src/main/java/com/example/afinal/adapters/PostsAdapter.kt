@@ -49,10 +49,6 @@ class PostsAdapter(val context: Context, private val posts: List<Post>, private 
                 listener.onReactClick(position, item.findViewById(R.id.iconReact))
             }
 
-            item.findViewById<ImageView>(R.id.imageViewMore).setOnClickListener {
-                listener.onMoreClick(position)
-            }
-
             recyclerViewTag.addItemDecoration(
                 SpacingItemDecoration(
                     context.resources.getDimensionPixelOffset(R.dimen.item_space),
@@ -81,6 +77,7 @@ class PostsAdapter(val context: Context, private val posts: List<Post>, private 
         holder.postOwner.text = currentPost.postOwner
         holder.postContent.text = currentPost.postContent
 
+        Log.d("SHOW", "TESTPOST")
         val storageReference = FirebaseStorage.getInstance().getReferenceFromUrl("gs://students-61271.appspot.com/")
 
         storageReference.child("ProfilePictures/${currentPost.postOwnerId}").downloadUrl.addOnSuccessListener { url ->
@@ -97,7 +94,8 @@ class PostsAdapter(val context: Context, private val posts: List<Post>, private 
             override fun onDataChange(snapshot: DataSnapshot) {
 
                 val arrayListTags: ArrayList<String> = arrayListOf()
-                val current = snapshot.child(posts[position].postId.toString())
+                val idd = posts[position]
+                val current = snapshot.child(idd.postId.toString())
 
                 for (tag in current.child("postTags").children) {
                     val currentTag = tag.getValue(String::class.java)?: return
@@ -169,7 +167,6 @@ class PostsAdapter(val context: Context, private val posts: List<Post>, private 
     interface OnItemClickListener {
         fun onItemClick(position: Int)
         fun onReactClick(position: Int, view: ImageView)
-        fun onMoreClick(position: Int)
     }
 
     private fun nestedRecycler(recyclerView: RecyclerView, tagList: ArrayList<String>) {

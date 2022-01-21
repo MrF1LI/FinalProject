@@ -38,15 +38,6 @@
             android:layout_toEndOf="@+id/userAvatar"
             android:layout_alignParentTop="true" />
 
-        <ImageView
-            android:id="@+id/imageViewMore"
-            android:layout_width="wrap_content"
-            app:tint="@color/opposite_color"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            app:srcCompat="@drawable/ic_more_hor" />
-
     </RelativeLayout>
 
     <LinearLayout

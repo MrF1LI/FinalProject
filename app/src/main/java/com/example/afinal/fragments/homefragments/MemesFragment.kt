@@ -1,5 +1,6 @@
 package com.example.afinal.fragments.homefragments
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -49,10 +50,14 @@ class MemesFragment: Fragment(R.layout.fragment_memes) {
         return binding.root
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        loadMemes()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init()
-        loadMemes()
     }
 
     private fun init() {
@@ -60,7 +65,6 @@ class MemesFragment: Fragment(R.layout.fragment_memes) {
         recyclerViewMemes = binding.recyclerViewMemes
 
         val layoutManager = StaggeredGridLayoutManager(2, GridLayoutManager.VERTICAL)
-
         recyclerViewMemes.layoutManager = layoutManager
 
         binding.addMeme.setOnClickListener {
@@ -69,6 +73,7 @@ class MemesFragment: Fragment(R.layout.fragment_memes) {
     }
 
     private fun loadMemes() {
+
         dbMemes.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {
@@ -77,23 +82,24 @@ class MemesFragment: Fragment(R.layout.fragment_memes) {
 
                     for (snap in snapshot.children) {
                         val currentMeme = snap.key.toString()
-                        Log.d("SHOW", "KEY: $currentMeme")
                         arrayListMemes.add(currentMeme)
                     }
 
                     try {
-                        Log.d("SHOW", arrayListMemes.toString())
-                        recyclerViewMemes.adapter = MemeAdapter(context!!.applicationContext, arrayListMemes)
+                        recyclerViewMemes.adapter = MemeAdapter(requireContext(), arrayListMemes)
                     } catch (e: Exception) {
                         Log.e("SHOW", "Arvimchnevt")
                     }
+
                 }
+
             }
 
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
         })
+
     }
 
     private fun uploadImage() {

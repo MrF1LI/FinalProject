@@ -1,7 +1,6 @@
 package com.example.afinal.adapters
 
 import android.content.Context
-import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -27,12 +26,23 @@ class MemeAdapter(val context: Context, private val memes: ArrayList<String>):
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentImage = memes[position]
+        Log.d("SHOW", "TEST: $currentImage")
 
         val storageReference = FirebaseStorage.getInstance().getReferenceFromUrl("gs://students-61271.appspot.com/")
-        Log.d("SHOW", "IMAGE: $currentImage")
-        storageReference.child("Memes/${currentImage}").downloadUrl.addOnSuccessListener { url ->
-            Glide.with(context).load(url).into(holder.imageViewMeme)
-        }.addOnFailureListener {
+
+        storageReference.child("Memes/${currentImage}").downloadUrl.addOnSuccessListener {
+            Glide.with(context).load(it).into(holder.imageViewMeme)
+        }
+    }
+
+    override fun getItemCount() = memes.size
+
+}
+
+
+/*
+
+.addOnFailureListener {
             try {
                 throw it
             } catch (exc: Exception) {
@@ -40,8 +50,5 @@ class MemeAdapter(val context: Context, private val memes: ArrayList<String>):
             }
         }
 
-    }
 
-    override fun getItemCount() = memes.size
-
-}
+ */

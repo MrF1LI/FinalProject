@@ -46,14 +46,6 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/imageViewMore"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    app:srcCompat="@drawable/ic_more_hor" />
-
             </RelativeLayout>
 
             <LinearLayout

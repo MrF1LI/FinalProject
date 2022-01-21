@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.PopupMenu
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -75,9 +76,7 @@ class CommunityFragment: Fragment(R.layout.fragment_community), PostsAdapter.OnI
 
     }
 
-    override fun onMoreClick(position: Int) {
-        showMenu(requireView(), R.menu.menu_post)
-    }
+
 
     private fun loadPosts() {
 
@@ -151,16 +150,6 @@ class CommunityFragment: Fragment(R.layout.fragment_community), PostsAdapter.OnI
 
     }
 
-    private fun showMenu(v: View, menuRes: Int) {
-        val popup = PopupMenu(context, v)
-        popup.menuInflater.inflate(menuRes, popup.menu)
 
-        popup.setOnMenuItemClickListener {
-
-            false
-        }
-
-        popup.show()
-    }
 
 }

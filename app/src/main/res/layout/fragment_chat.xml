@@ -44,16 +44,6 @@
             android:textSize="16sp"
             android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/iconInfo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerInParent="true"
-            android:padding="5dp"
-            app:srcCompat="@drawable/ic_info"
-            app:tint="@color/btu_color" />
-
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView

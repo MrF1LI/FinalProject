@@ -87,6 +87,12 @@
         app:popUpToInclusive="true" />
 
     <action
+        android:id="@+id/action_profile"
+        app:destination="@id/profileFragment"
+        app:popUpTo="@id/profileFragment"
+        app:popUpToInclusive="true" />
+
+    <action
         android:id="@+id/action_add_lecturer"
         app:destination="@id/addLecturerFragment"
         app:popUpTo="@id/addLecturerFragment"

@@ -96,10 +96,6 @@ class PostInfoFragment: Fragment (R.layout.fragment_post_info) {
 
         //
 
-        binding.imageViewMore.setOnClickListener {
-            showMenu(it, R.menu.menu_post)
-        }
-
         binding.buttonAddComment.setOnClickListener {
             if (binding.editTextNewComment.text.isNotEmpty()) {
                 addNewComment(currentPostId)

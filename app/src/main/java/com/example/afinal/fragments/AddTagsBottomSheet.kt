@@ -41,7 +41,6 @@ class AddTagsBottomSheet: BottomSheetDialogFragment(), View.OnClickListener {
         arrayListTags = arrayListOf()
 
         binding.buttonSaveTags.setOnClickListener {
-
             val fragment = AddPostFragment()
             val bundle = Bundle()
             bundle.putStringArrayList("arrayListTags", arrayListTags)

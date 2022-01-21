@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import com.example.afinal.R
 import com.example.afinal.databinding.FragmentAddPostBinding
@@ -21,6 +20,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import java.lang.Exception
+import java.lang.NullPointerException
 
 class AddPostFragment: Fragment (R.layout.fragment_add_post) {
 
@@ -31,7 +31,7 @@ class AddPostFragment: Fragment (R.layout.fragment_add_post) {
     private val dbStudents = FirebaseDatabase.getInstance().getReference("students")
     private val auth = FirebaseAuth.getInstance()
 
-    private var arrayListTags: ArrayList<String> = arrayListOf()
+    private var arrayListTags: List<String> = arrayListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,6 +39,26 @@ class AddPostFragment: Fragment (R.layout.fragment_add_post) {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentAddPostBinding.inflate(inflater, container, false)
+        try {
+            val arr = arguments?.getStringArray("arrayListTags")
+//            arguments.getStringArrayList("arrayListTags")
+            Log.e("SHOW", arr.toString())
+            arrayListTags = arr!!.toList()
+        } catch (e: Exception) {
+            Log.d("SHOW", "Arvimchnevt")
+        }
+
+        for (tag in arrayListTags) {
+            val chip = Chip(this.context)
+
+            chip.text = tag
+            chip.isCloseIconVisible = true
+            chip.setOnCloseIconClickListener {
+                binding.filterTags.removeView(chip)
+            }
+            binding.filterTags.addView(chip)
+        }
+
         return binding.root
     }
 
@@ -47,25 +67,6 @@ class AddPostFragment: Fragment (R.layout.fragment_add_post) {
         init()
         binding.editTextPost.requestFocus()
         activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
-    }
-
-    override fun onResume() {
-        super.onResume()
-
-        Log.d("SHOW", "onResume")
-        if (arguments != null) {
-            arrayListTags = arguments?.getStringArrayList("arrayListTags")!!
-            for (tag in arrayListTags) {
-                val chip = Chip(this.context)
-
-                chip.text = tag
-                chip.isCloseIconVisible = true
-                chip.setOnCloseIconClickListener {
-                    binding.filterTags.removeView(chip)
-                }
-                binding.filterTags.addView(chip)
-            }
-        }
     }
 
     private fun init() {
@@ -99,9 +100,9 @@ class AddPostFragment: Fragment (R.layout.fragment_add_post) {
         }
 
         binding.buttonAddTags.setOnClickListener {
-            val modalBottomSheet = AddTagsBottomSheet()
-            modalBottomSheet.show(childFragmentManager, null)
-
+            val controller = Navigation.findNavController(requireView())
+            val action = AddPostFragmentDirections.actionAddPostFragmentToAddTagsFragment()
+            controller.navigate(action)
         }
 
     }

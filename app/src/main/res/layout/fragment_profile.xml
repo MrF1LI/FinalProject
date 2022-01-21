@@ -13,6 +13,7 @@
         android:tint="@color/btu_dark" />
 
     <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_marginTop="35dp"
         android:id="@+id/imageUserAvatar"
         android:layout_width="120dp"
         android:layout_height="120dp"
@@ -30,5 +31,37 @@
         android:layout_below="@+id/imageUserAvatar"
         android:layout_centerInParent="true"
         android:textStyle="bold" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/buttonLogOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_logout"
+        android:tint="@color/btu_dark" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="40dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editTextNewPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ახალი პაროლი" />
+
+        <Button
+            android:id="@+id/changePassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:background="@color/opposite_color"
+            android:text="პაროლის შეცვლა" />
+
+    </LinearLayout>
 
 </RelativeLayout>

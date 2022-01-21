@@ -1,23 +1,21 @@
 package com.example.afinal.fragments
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.afinal.databinding.BottomSheetAddTagsBinding
-import com.example.afinal.fragments.AddPostFragment
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.chip.Chip
-import android.R
-import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import com.example.afinal.R
+import com.example.afinal.databinding.FragmentAddTagsBinding
+import java.util.ArrayList
 
 
-class AddTagsBottomSheet: BottomSheetDialogFragment(), View.OnClickListener {
+class AddTagsFragment: Fragment(), View.OnClickListener {
 
-    private var _binding: BottomSheetAddTagsBinding? = null
+    private var _binding: FragmentAddTagsBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var arrayListTags: ArrayList<String>
@@ -27,7 +25,7 @@ class AddTagsBottomSheet: BottomSheetDialogFragment(), View.OnClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = BottomSheetAddTagsBinding.inflate(inflater, container, false)
+        _binding = FragmentAddTagsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -41,11 +39,14 @@ class AddTagsBottomSheet: BottomSheetDialogFragment(), View.OnClickListener {
         arrayListTags = arrayListOf()
 
         binding.buttonSaveTags.setOnClickListener {
-            val fragment = AddPostFragment()
-            val bundle = Bundle()
-            bundle.putStringArrayList("arrayListTags", arrayListTags)
-            fragment.arguments = bundle
-            dismiss()
+//            val fragment = AddPostFragment()
+//            val bundle = Bundle()
+//            bundle.putStringArrayList("arrayListTags", arrayListTags)
+//            fragment.arguments = bundle
+
+            val controller = Navigation.findNavController(requireView())
+            val action = AddTagsFragmentDirections.actionAddTagsFragmentToAddPostFragment(arrayListTags.toTypedArray())
+            controller.navigate(action)
         }
 
         binding.chip.setOnClickListener(this)

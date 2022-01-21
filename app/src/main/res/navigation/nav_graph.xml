@@ -9,7 +9,15 @@
         android:id="@+id/addPostFragment"
         android:name="com.example.afinal.fragments.AddPostFragment"
         android:label="AddPostFragment"
-        tools:layout="@layout/fragment_add_post" />
+        tools:layout="@layout/fragment_add_post" >
+        <action
+            android:id="@+id/action_addPostFragment_to_addTagsFragment"
+            app:destination="@id/addTagsFragment" />
+
+        <argument
+            android:name="arrayListTags"
+            app:argType="string[]" />
+    </fragment>
 
     <fragment
         android:id="@+id/chatFragment"
@@ -55,6 +63,16 @@
         android:label="AddLecturerFragment"
         tools:layout="@layout/fragment_add_lecturer"/>
 
+    <fragment
+        android:id="@+id/addTagsFragment"
+        android:name="com.example.afinal.fragments.AddTagsFragment"
+        android:label="AddTagsFragment"
+        tools:layout="@layout/fragment_add_tags">
+        <action
+            android:id="@+id/action_addTagsFragment_to_addPostFragment"
+            app:destination="@id/addPostFragment" />
+    </fragment>
+
     <action
         android:id="@+id/action_home"
         app:destination="@id/homeFragment"
@@ -96,6 +114,12 @@
         android:id="@+id/action_add_lecturer"
         app:destination="@id/addLecturerFragment"
         app:popUpTo="@id/addLecturerFragment"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/action_add_tag"
+        app:destination="@id/addTagsFragment"
+        app:popUpTo="@id/addTagsFragment"
         app:popUpToInclusive="true" />
 
 </navigation>

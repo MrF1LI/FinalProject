@@ -17,6 +17,7 @@
         <entry key="..\:/Users/F1LI/AndroidStudioProjects/Final/app/src/main/res/layout/dialog_rate.xml" value="0.25" />
         <entry key="..\:/Users/F1LI/AndroidStudioProjects/Final/app/src/main/res/layout/fragment_add_lecturer.xml" value="0.25" />
         <entry key="..\:/Users/F1LI/AndroidStudioProjects/Final/app/src/main/res/layout/fragment_add_post.xml" value="0.25" />
+        <entry key="..\:/Users/F1LI/AndroidStudioProjects/Final/app/src/main/res/layout/fragment_add_tags.xml" value="0.4" />
         <entry key="..\:/Users/F1LI/AndroidStudioProjects/Final/app/src/main/res/layout/fragment_chat.xml" value="0.25" />
         <entry key="..\:/Users/F1LI/AndroidStudioProjects/Final/app/src/main/res/layout/fragment_chats.xml" value="0.25" />
         <entry key="..\:/Users/F1LI/AndroidStudioProjects/Final/app/src/main/res/layout/fragment_community.xml" value="0.25" />
@@ -24,7 +25,7 @@
         <entry key="..\:/Users/F1LI/AndroidStudioProjects/Final/app/src/main/res/layout/fragment_lecturer_review.xml" value="0.264" />
         <entry key="..\:/Users/F1LI/AndroidStudioProjects/Final/app/src/main/res/layout/fragment_memes.xml" value="0.152" />
         <entry key="..\:/Users/F1LI/AndroidStudioProjects/Final/app/src/main/res/layout/fragment_post_info.xml" value="0.264" />
-        <entry key="..\:/Users/F1LI/AndroidStudioProjects/Final/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
+        <entry key="..\:/Users/F1LI/AndroidStudioProjects/Final/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/Users/F1LI/AndroidStudioProjects/Final/app/src/main/res/layout/fragment_rate.xml" value="0.25" />
         <entry key="..\:/Users/F1LI/AndroidStudioProjects/Final/app/src/main/res/layout/header_sidebar_navigation.xml" value="0.25" />
         <entry key="..\:/Users/F1LI/AndroidStudioProjects/Final/app/src/main/res/layout/item_chat.xml" value="0.25" />

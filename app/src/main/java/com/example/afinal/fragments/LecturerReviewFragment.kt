@@ -123,7 +123,11 @@ class LecturerReviewFragment: Fragment (R.layout.fragment_lecturer_review) {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         arrayListReviews.clear()
 
-                        binding.lecturerReviews.text = "${snapshot.childrenCount} Review"
+                        try {
+                            binding.lecturerReviews.text = "${snapshot.childrenCount} Review"
+                        } catch (e: Exception) {
+                            Log.d("SHOW", "Arvimchnevt")
+                        }
 
                         for (snap in snapshot.children) {
                             val currentReview = snap.getValue(Comment::class.java)?: return

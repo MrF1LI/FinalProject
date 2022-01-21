@@ -10,6 +10,10 @@ import com.example.afinal.databinding.BottomSheetAddTagsBinding
 import com.example.afinal.fragments.AddPostFragment
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.chip.Chip
+import android.R
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
+
 
 class AddTagsBottomSheet: BottomSheetDialogFragment(), View.OnClickListener {
 
@@ -37,7 +41,11 @@ class AddTagsBottomSheet: BottomSheetDialogFragment(), View.OnClickListener {
         arrayListTags = arrayListOf()
 
         binding.buttonSaveTags.setOnClickListener {
-            arrayListTags
+
+            val fragment = AddPostFragment()
+            val bundle = Bundle()
+            bundle.putStringArrayList("arrayListTags", arrayListTags)
+            fragment.arguments = bundle
             dismiss()
         }
 

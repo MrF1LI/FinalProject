@@ -120,7 +120,11 @@ class ChatFragment: Fragment (R.layout.fragment_chat) {
                     arrayListMessages.add(currentMessage)
                 }
 
-                recyclerViewMessages.adapter = MessageAdapter(requireContext(), arrayListMessages)
+                try {
+                    recyclerViewMessages.adapter = MessageAdapter(requireContext(), arrayListMessages)
+                } catch (e: Exception) {
+                    Log.d("SHOW", "Arvimchnevt")
+                }
 
             }
 

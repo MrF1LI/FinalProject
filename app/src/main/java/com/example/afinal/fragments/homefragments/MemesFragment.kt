@@ -7,12 +7,15 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.GridLayout
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.contentValuesOf
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.afinal.R
 import com.example.afinal.adapters.MemeAdapter
 import com.example.afinal.databinding.FragmentMemesBinding
@@ -56,7 +59,9 @@ class MemesFragment: Fragment(R.layout.fragment_memes) {
         arrayListMemes = arrayListOf()
         recyclerViewMemes = binding.recyclerViewMemes
 
-        recyclerViewMemes.layoutManager = GridLayoutManager(activity, 2)
+        val layoutManager = StaggeredGridLayoutManager(2, GridLayoutManager.VERTICAL)
+
+        recyclerViewMemes.layoutManager = layoutManager
 
         binding.addMeme.setOnClickListener {
             selectImage()
@@ -75,8 +80,10 @@ class MemesFragment: Fragment(R.layout.fragment_memes) {
                         Log.d("SHOW", "KEY: $currentMeme")
                         arrayListMemes.add(currentMeme)
                     }
+
                     try {
-                        recyclerViewMemes.adapter = MemeAdapter(requireContext(), arrayListMemes)
+                        Log.d("SHOW", arrayListMemes.toString())
+                        recyclerViewMemes.adapter = MemeAdapter(context!!.applicationContext, arrayListMemes)
                     } catch (e: Exception) {
                         Log.e("SHOW", "Arvimchnevt")
                     }
@@ -87,8 +94,6 @@ class MemesFragment: Fragment(R.layout.fragment_memes) {
                 TODO("Not yet implemented")
             }
         })
-
-        recyclerViewMemes.adapter = MemeAdapter(requireContext(), arrayListMemes)
     }
 
     private fun uploadImage() {

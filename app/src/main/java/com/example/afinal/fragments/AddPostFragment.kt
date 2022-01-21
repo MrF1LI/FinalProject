@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import com.example.afinal.R
 import com.example.afinal.databinding.FragmentAddPostBinding
@@ -19,6 +20,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import java.lang.Exception
 
 class AddPostFragment: Fragment (R.layout.fragment_add_post) {
 
@@ -49,10 +51,12 @@ class AddPostFragment: Fragment (R.layout.fragment_add_post) {
 
     override fun onResume() {
         super.onResume()
+
+        Log.d("SHOW", "onResume")
         if (arguments != null) {
             arrayListTags = arguments?.getStringArrayList("arrayListTags")!!
             for (tag in arrayListTags) {
-                val chip = Chip(activity)
+                val chip = Chip(this.context)
 
                 chip.text = tag
                 chip.isCloseIconVisible = true
@@ -96,7 +100,6 @@ class AddPostFragment: Fragment (R.layout.fragment_add_post) {
 
         binding.buttonAddTags.setOnClickListener {
             val modalBottomSheet = AddTagsBottomSheet()
-
             modalBottomSheet.show(childFragmentManager, null)
 
         }

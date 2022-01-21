@@ -5,28 +5,22 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.activity.OnBackPressedCallback
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.bumptech.glide.Glide
-import com.example.afinal.MainActivity
 import com.example.afinal.R
 import com.example.afinal.databinding.FragmentHomeBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
-import java.lang.Exception
 
 class HomeFragment: Fragment (R.layout.fragment_home) {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+    val storageReference = FirebaseStorage.getInstance().getReferenceFromUrl("gs://students-61271.appspot.com/")
 
     private val auth = FirebaseAuth.getInstance()
 
@@ -47,8 +41,6 @@ class HomeFragment: Fragment (R.layout.fragment_home) {
     }
 
     private fun init() {
-
-        val storageReference = FirebaseStorage.getInstance().getReferenceFromUrl("gs://students-61271.appspot.com/")
 
         storageReference.child("ProfilePictures/${auth.currentUser!!.uid}").downloadUrl.addOnSuccessListener { url ->
             Glide.with(this).load(url).into(binding.imageUserAvatar)

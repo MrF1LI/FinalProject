@@ -80,7 +80,6 @@
             android:backgroundTint="@color/opposite_color"
             android:hint="ელ. ფოსტა" />
 
-
         <EditText
             android:id="@+id/editTextPassword"
             android:inputType="textPassword"

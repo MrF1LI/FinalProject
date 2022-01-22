@@ -5,6 +5,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import com.example.afinal.databinding.ActivityRegistrationBinding
 import com.example.afinal.models.Student
 import com.google.firebase.auth.FirebaseAuth
@@ -40,6 +41,12 @@ class RegistrationActivity : AppCompatActivity() {
         binding.buttonRegistration.setOnClickListener {
             val email = binding.editTextEmail.text.toString()
             val password = binding.editTextPassword.text.toString()
+            val confirmPassword = binding.editTextConfirmPassword.text.toString()
+
+            if (password != confirmPassword) {
+                Toast.makeText(this, "Confirm Password Failed.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener {

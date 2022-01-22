@@ -22,14 +22,15 @@
         app:civ_border_color="#C6000000" />
 
     <TextView
+        android:id="@+id/userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/imageUserAvatar"
+        android:layout_centerInParent="true"
+        android:padding="10dp"
         android:text="გიორგი ფილიშვილი"
         android:textColor="@color/btu_color"
         android:textSize="16sp"
-        android:padding="10dp"
-        android:layout_below="@+id/imageUserAvatar"
-        android:layout_centerInParent="true"
         android:textStyle="bold" />
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
@@ -58,8 +59,8 @@
             android:id="@+id/changePassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/text_color"
-            android:background="@color/opposite_color"
+            android:textColor="@color/item_color"
+            android:background="@drawable/bg_button"
             android:text="პაროლის შეცვლა" />
 
     </LinearLayout>

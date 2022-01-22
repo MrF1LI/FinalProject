@@ -18,6 +18,16 @@
             android:paddingTop="10dp"
             android:layout_height="wrap_content">
 
+            <TextView
+                android:id="@+id/topLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/text_color"
+                android:text="Community" />
+
             <ImageView
                 android:id="@+id/buttonAddPost"
                 android:layout_width="wrap_content"
@@ -25,9 +35,9 @@
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:background="@drawable/bg_icons"
-                app:tint="@color/opposite_color"
                 android:padding="8dp"
-                app:srcCompat="@drawable/ic_add" />
+                app:srcCompat="@drawable/ic_add"
+                app:tint="@color/opposite_color" />
 
         </RelativeLayout>
 

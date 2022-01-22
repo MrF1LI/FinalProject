@@ -22,6 +22,10 @@ class AuthenticationActivity : AppCompatActivity() {
 
     private fun init() {
 
+        binding.buttonResetPassword.setOnClickListener {
+            startActivity(Intent(this, ResetPasswordActivity::class.java))
+        }
+
         binding.buttonRegistration.setOnClickListener {
             startActivity(Intent(this, RegistrationActivity::class.java))
         }

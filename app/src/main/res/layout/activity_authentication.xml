@@ -82,6 +82,14 @@
             android:backgroundTint="@color/opposite_color"
             android:hint="პაროლი" />
 
+        <TextView
+            android:id="@+id/buttonResetPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="დაგავიწყდათ პაროლი?"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/title_color" />
+
         <Button
             android:id="@+id/buttonAuthorization"
             android:layout_width="match_parent"

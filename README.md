@@ -1,8 +1,7 @@
-# FinalProject
-Giorgi Pilishvili, Gizi Jaliashvili
 
-# რას არის Final?
-ეს აპლიკაცია აირს მხოლოდ BTU სტუდენტებისათვის.       
+# What is Final?
+This application is for BTU students only.
+
 # რისი გაკეთება შეიძლება Final-ში? 
 გაიგონ რომელი ლექტოირი არის საუკეთესო/შეაფასონ ისინი, იკონტაქტონ ერთმანეთში, დაპოსტონ თავიანთვის საინტერესო  
   საკითხის შესახებ პოსტი და გაუზიარონ ერთმანეთს სახალისო meme-ბი.  
@@ -12,3 +11,6 @@ Giorgi Pilishvili, Gizi Jaliashvili
   რეგისტრაციის ნაწილში შეგიძლიათ (არ არის აუცილებელი) ჩასვათ სასურველი სურათი, (აუცილებელია) --> სახელი, გვარი, ელ.ფოსტა და პაროლი.
   ამის შემდეგ თქვენ ოფიციალურად გახდებით Final-ის მომხარებელი.
 # !!!გილოცავ!!!
+
+# Creators of Final Project
+Giorgi Pilishvili, Gizi Jaliashvili

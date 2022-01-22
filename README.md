@@ -1,16 +1,21 @@
 
 # What is Final?
+
 This application is for BTU students only.
 
-# რისი გაკეთება შეიძლება Final-ში? 
-გაიგონ რომელი ლექტოირი არის საუკეთესო/შეაფასონ ისინი, იკონტაქტონ ერთმანეთში, დაპოსტონ თავიანთვის საინტერესო  
-  საკითხის შესახებ პოსტი და გაუზიარონ ერთმანეთს სახალისო meme-ბი.  
-# როგორ დავრეგისტრირდე? 
-აპლიკაციაში შესვლის შემდეგ დაგხვდებათ საავტორიზაციო არეალი. ეკრანის დაბლა იქნება რეგისტრაციის ღილაკი. 
-  ამ წარწერაძე ერთი დაწკაპუნებით შეგიძლიათ გაიაროთ რეგისტრაცია
-  რეგისტრაციის ნაწილში შეგიძლიათ (არ არის აუცილებელი) ჩასვათ სასურველი სურათი, (აუცილებელია) --> სახელი, გვარი, ელ.ფოსტა და პაროლი.
-  ამის შემდეგ თქვენ ოფიციალურად გახდებით Final-ის მომხარებელი.
-# !!!გილოცავ!!!
+# What is Final for? 
+
+The application gives you an opportunity to find out the rating scores of the lecturers,
+evaluate them, contact to each other, post on an interesting topic and share funny memes with each other. 
+
+# How To Register For Final?
+
+After opening the application, you will see the authorization field.
+At the bottom of the screen will be the registration button. 
+With one click on this caption you will be able to register. 
+In the registration section you can upload a photo (not important), 
+(important) name, surname, e-mail and password. After that you will officially become a user of FINAL.
+# !!!congratulations!!!
 
 # Creators of Final Project
 Giorgi Pilishvili, Gizi Jaliashvili
